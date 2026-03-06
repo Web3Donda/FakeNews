@@ -585,15 +585,17 @@ export default function RoomPlayPage() {
               <button
                 onClick={() => {
                   if (!myScore) return;
+                  const text = `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer`;
                   const origin = window.location.origin;
+                  
+                  // Don't include URL if it's localhost (Twitter can't open localhost URLs)
                   const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
                   
-                  // Include URL in the text so it shows up in the tweet
-                  const text = isLocalhost
-                    ? `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer`
-                    : `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer\n\n${origin}`;
-                  
-                  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                  // Use url parameter to make Twitter fetch Open Graph meta tags and show image preview
+                  // Text + URL parameter = Twitter will show link preview with image
+                  const twitterUrl = isLocalhost
+                    ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
+                    : `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(origin)}`;
                   
                   window.open(twitterUrl, "_blank");
                 }}
