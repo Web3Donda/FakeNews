@@ -588,10 +588,11 @@ export default function RoomPlayPage() {
                   const origin = window.location.origin;
                   const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
                   
-                  // Simple format: text with URL in the text itself
+                  // Format: score text, then URL, then "Built with @genlayer"
+                  // This format helps prevent Twitter from "eating" the link
                   const text = isLocalhost
                     ? `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer`
-                    : `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer\n\n${origin}`;
+                    : `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\n${origin}\n\nBuilt with @genlayer`;
                   
                   // tw_p=web parameter disables link preview in Twitter
                   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&tw_p=web`;
