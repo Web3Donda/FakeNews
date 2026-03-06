@@ -22,11 +22,24 @@ export const metadata: Metadata = {
   title: "Fake News Detective - GenLayer Game",
   description: "Can you spot the fake headline? Test your skills against AI consensus on GenLayer blockchain.",
   openGraph: {
-    images: ["/twitter-image.jpg"],
+    title: "Fake News Detective - GenLayer Game",
+    description: "Can you spot the fake headline? Test your skills against AI consensus on GenLayer blockchain.",
+    type: "website",
+    images: [
+      {
+        url: "/twitter-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Fake News Detective Game",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "Fake News Detective - GenLayer Game",
+    description: "Can you spot the fake headline? Test your skills against AI consensus on GenLayer blockchain.",
     images: ["/twitter-image.jpg"],
+    creator: "@genlayer",
   },
 };
 

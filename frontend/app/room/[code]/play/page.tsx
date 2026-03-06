@@ -591,10 +591,11 @@ export default function RoomPlayPage() {
                   // Don't include URL if it's localhost (Twitter can't open localhost URLs)
                   const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
                   
-                  // Build X intent URL - only include url param if it's not localhost
+                  // Build Twitter/X share URL with proper parameters
+                  // Twitter will automatically fetch Open Graph image from the page
                   const twitterUrl = isLocalhost
-                    ? `https://x.com/intent/post?text=${encodeURIComponent(text)}`
-                    : `https://x.com/intent/post?text=${encodeURIComponent(text + '\n' + origin)}`;
+                    ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
+                    : `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(origin)}`;
                   
                   window.open(twitterUrl, "_blank");
                 }}
