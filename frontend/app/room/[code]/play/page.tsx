@@ -593,7 +593,8 @@ export default function RoomPlayPage() {
                     ? `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer`
                     : `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer\n\n${origin}`;
                   
-                  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                  // tw_p=web parameter disables link preview in Twitter
+                  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&tw_p=web`;
                   
                   window.open(twitterUrl, "_blank");
                 }}
