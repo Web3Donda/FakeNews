@@ -585,17 +585,16 @@ export default function RoomPlayPage() {
               <button
                 onClick={() => {
                   if (!myScore) return;
-                  const text = `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer`;
                   const origin = window.location.origin;
-                  
-                  // Don't include URL if it's localhost (Twitter can't open localhost URLs)
                   const isLocalhost = origin.includes('localhost') || origin.includes('127.0.0.1');
                   
-                  // Build Twitter/X share URL with proper parameters
-                  // Twitter will automatically fetch Open Graph image from the page
-                  const twitterUrl = isLocalhost
-                    ? `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
-                    : `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(origin)}`;
+                  // Format: text on first lines, then URL on separate line
+                  // This makes Twitter show URL separately and fetch Open Graph image
+                  const text = isLocalhost
+                    ? `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer`
+                    : `I just scored ${myScore.score}/${myScore.games_played} in the Fake News game!\n\nBuilt with @genlayer\n\n${origin}`;
+                  
+                  const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
                   
                   window.open(twitterUrl, "_blank");
                 }}
