@@ -104,10 +104,6 @@ Create your own game rooms:
 
 Feel free to fork, improve, and submit PRs! This is a great example of GenLayer AI consensus in action.
 
-## 📝 License
-
-MIT License - feel free to use this project as a reference for your own GenLayer apps!
-
 ---
 
 **Built with ❤️ using GenLayer AI Consensus**
