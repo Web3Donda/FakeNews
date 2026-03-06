@@ -37,7 +37,11 @@ export function getStudioUrl(): string {
 }
 
 export function getContractAddress(): string {
-  return process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "";
+  const address = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "";
+  if (typeof window !== "undefined" && !address) {
+    console.warn("NEXT_PUBLIC_CONTRACT_ADDRESS is not set. Contract will not work.");
+  }
+  return address;
 }
 
 export function isMetaMaskInstalled(): boolean {
