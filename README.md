@@ -1,8 +1,6 @@
 # 🕵️ Fake News Detective
 
-**Can you spot the fake headline?** Test your skills against AI consensus on GenLayer blockchain.
-
-A fun, interactive game where you're challenged to identify AI-generated fake news headlines among real ones. Every guess is verified by GenLayer's decentralized AI consensus - no cheating, just pure skill and luck!
+This project is a decentralized fact-checking game built on GenLayer, demonstrating real-world AI consensus applications rather than surface-level demos. The system leverages GenLayer's execution and validation model as the core computational layer for headline verification, game state management, and score resolution. By using GenLayer's decentralized AI consensus for fact-checking, the game achieves trust-minimized, deterministic verification of player guesses, ensuring that every round's outcome is validated through a distributed network of AI validators rather than a single point of failure. The architecture emphasizes infrastructure-first design, showing how GenLayer enables composable, verifiable applications where game logic, scoring, and leaderboard state are all managed on-chain through Intelligent Contracts.
 
 ## 🎮 How It Works
 
