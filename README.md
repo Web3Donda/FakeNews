@@ -23,7 +23,7 @@ A fun, interactive game where you're challenged to identify AI-generated fake ne
 ## 🛠️ Tech Stack
 
 - **Frontend**: Next.js 16, React, TypeScript, Tailwind CSS
-- **Blockchain**: GenLayer (Python smart contracts)
+- **Blockchain**: GenLayer (Python intelligence contracts)
 - **Wallet**: MetaMask integration
 - **Deployment**: Vercel
 
