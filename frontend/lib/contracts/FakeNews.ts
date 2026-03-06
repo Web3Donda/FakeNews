@@ -84,6 +84,7 @@ class FakeNews {
         address: this.contractAddress,
         functionName: "start_round",
         args: [],
+        value: 0n,
       });
 
       console.log("start_round txHash:", txHash);
@@ -127,6 +128,7 @@ class FakeNews {
         address: this.contractAddress,
         functionName: "guess",
         args: [roundId, playerAnswer],
+        value: 0n,
       });
 
       const receipt = await this.client.waitForTransactionReceipt({
@@ -253,6 +255,7 @@ class FakeNews {
         address: this.contractAddress,
         functionName: "set_nickname",
         args: [name],
+        value: 0n,
       });
 
       await this.client.waitForTransactionReceipt({
@@ -317,6 +320,7 @@ class FakeNews {
         address: this.contractAddress,
         functionName: "create_room",
         args: [code, JSON.stringify(headlines), mode, JSON.stringify(answers), timer],
+        value: 0n,
       });
 
       const receipt = await this.client.waitForTransactionReceipt({
@@ -349,6 +353,7 @@ class FakeNews {
         address: this.contractAddress,
         functionName: "start_room_round",
         args: [roomId],
+        value: 0n,
       });
 
       const receipt = await this.client.waitForTransactionReceipt({
